@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xroca-pe <xroca-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 12:15:13 by xroca-pe          #+#    #+#             */
-/*   Updated: 2024/01/19 09:57:53 by xroca-pe         ###   ########.fr       */
+/*   Updated: 2024/01/19 16:07:48 by xroca-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (lst && new)
+	if (!*lst)
+		*lst = new;
+	else if (lst && new)
 	{
 		new->next = *lst;
 		*lst = new;
@@ -43,7 +45,6 @@ int	main(void)
 		printf("%s ", t -> content);
 		t = t -> next;
 	}
-
 	return (0);
 }
 */

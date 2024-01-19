@@ -6,7 +6,7 @@
 /*   By: xroca-pe <xroca-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:30:59 by xroca-pe          #+#    #+#             */
-/*   Updated: 2024/01/19 14:13:42 by xroca-pe         ###   ########.fr       */
+/*   Updated: 2024/01/19 16:08:53 by xroca-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		if (!new)
 		{
 			ft_lstclear(&lst2, del);
-			free(aux);
+			del(aux);
 			return (NULL);
 		}
 		ft_lstadd_back(&lst2, new);

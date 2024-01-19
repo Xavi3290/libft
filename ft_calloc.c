@@ -6,7 +6,7 @@
 /*   By: xroca-pe <xroca-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 09:15:45 by xroca-pe          #+#    #+#             */
-/*   Updated: 2024/01/17 16:48:27 by xroca-pe         ###   ########.fr       */
+/*   Updated: 2024/01/19 16:06:16 by xroca-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*memory;
 
+	if (count > 0 && count * size / count != size)
+		return (0);
 	memory = malloc(size * count);
 	if (memory == 0)
 		return (0);
@@ -34,13 +36,17 @@ inicializados en cero.
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-	int *p = ft_calloc(5, sizeof(int));
-	int *p2 = calloc(5, sizeof(int));
-    char *s = ft_calloc(5, sizeof(char));
-	char *s2 =  calloc(5, sizeof(char));
+	int		*p;
+	int		*p2;
+	char	*s;
+	char	*s2;
 
+	p = ft_calloc(5, sizeof(int));
+	p2 = calloc(5, sizeof(int));
+	s = ft_calloc(5, sizeof(char));
+	s2 = calloc(5, sizeof(char));
 	if(p || p2 || s || s2)
 	{
 		printf("%p ", p);
@@ -52,7 +58,6 @@ int main(void)
 	free(p2);
 	free(s);
 	free(s2);
-
 	return (0);
 }
 */
