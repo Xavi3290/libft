@@ -6,7 +6,7 @@
 /*   By: xroca-pe <xroca-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 13:29:35 by xroca-pe          #+#    #+#             */
-/*   Updated: 2024/01/17 17:02:37 by xroca-pe         ###   ########.fr       */
+/*   Updated: 2024/01/30 10:07:57 by xroca-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	if (fd >= 0)
-		write(fd, &c, 1);
+	write(fd, &c, 1);
 }
 /*
 fd :
